@@ -12,10 +12,9 @@ public class DatabaseInitService {
     public static void main(String[] args) throws IOException, SQLException {
         Connection conn = Database.getInstance().getConnection();
         String sql = String.join("\n",
-                     Files.readAllLines(Paths.get("sql/init_db.sql")));
+                Files.readAllLines(Paths.get("sql/init_db.sql")));
 
         PreparedStatement stat = conn.prepareStatement(sql);
         stat.executeUpdate();
-
     }
 }

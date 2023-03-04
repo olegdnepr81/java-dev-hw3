@@ -11,7 +11,7 @@ public class Database {
 
     private final String connectionUrl = "jdbc:h2:./DB";
 
-    private Database() throws SQLException {
+    private Database() {
         try {
             Class.forName("org.h2.Driver");
             connection = DriverManager.getConnection(connectionUrl);
